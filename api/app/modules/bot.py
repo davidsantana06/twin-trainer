@@ -1,6 +1,7 @@
+from datetime import datetime
 from flask import Blueprint
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 import json
 
 from app.config import paths
@@ -27,3 +28,21 @@ def learn_conversations() -> None:
             answer = conversation['answer']
             for statement in statements:
                 chat_bot.learn(statement, answer)
+
+
+def _get_answer(statement: str) -> Tuple[str, datetime]:
+    answer = chat_bot.answer(statement)
+    timestamp = datetime.now()
+    return (answer, timestamp)
+
+
+# controller _
+
+@bot.get('/<string:statement>')
+def get_answer(statement: str):
+    answer, timestamp = _get_answer(statement)
+    return {
+        'statement': statement,
+        'answer': answer,
+        'timestamp': timestamp
+    }
