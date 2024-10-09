@@ -46,18 +46,21 @@ def _store_message(content: str, role: _Role) -> None:
 
 def _fetch(url: str) -> Dict[str, str]:
     response = requests.get(url)
+    response.raise_for_status()
     return response.json()
 
 
 def _get_answer(statement: str) -> str:
     url = f'{_API_HOST}/bot/{statement}'
-    data = _fetch(url)
-    return data['answer']
-
-
-def _get_info() -> Dict[str, str]:
-    data = _fetch(_API_HOST)
-    return data
+    try:
+        data = _fetch(url)
+        answer = data.get('answer')
+    except:
+        answer = 'Bip bop! ' \
+            + 'Estou passando por um "esgotamento" temporário ' \
+            + 'e, infelizmente, não consigo responder agora. ' \
+            + 'Você pode tentar novamente mais tarde!'
+    return answer
 
 
 # head _
@@ -74,26 +77,23 @@ def configure_page() -> None:
 def display_learn_more() -> None:
     with st.expander('💡 Saiba mais...'):
         st.markdown('''
-            **Treinador Twin** é um assistente virtual de 
-            código aberto, desenvolvido como parte de um 
-            projeto acadêmico, com o objetivo de responder 
-            a perguntas relacionadas ao universo fitness. 
-            O bot que alimenta este assistente foi treinado 
-            com um conjunto de dados limitado, focado em 
-            fornecer respostas precisas a consultas 
-            específicas.
+            **Treinador Twin** é um assistente virtual de código 
+            aberto, desenvolvido como parte de um projeto 
+            acadêmico, com o objetivo de responder a perguntas 
+            relacionadas ao universo fitness. O bot que alimenta 
+            este assistente foi treinado com um conjunto de dados 
+            limitado, focado em fornecer respostas precisas a 
+            consultas específicas.
 
             🤔 Não sabe o que fazer? Experimente enviar:
 
-            - Quais são os principais exercícios de 
-            musculação?
+            - Quais são os principais exercícios de musculação?
             - Qual é o melhor horário para treinar?
             - O que devo comer para ganhar músculos?
-            - Quais suplementos são mais indicados para 
-            ganhar músculos?
+            - Quais suplementos são mais indicados para ganhar 
+            músculos?
             - Quais exercícios devo fazer para o trapézio?
-            - Qual exercício devo fazer no lugar de peck 
-            deck?
+            - Qual exercício devo fazer no lugar de peck deck?
         ''')
 
 
