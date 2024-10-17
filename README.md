@@ -12,11 +12,17 @@ Assistente virtual centrado no universo fitness, desenvolvido para responder a u
 
 ### 🛠️ Instalação e Configuração
 
-O sistema foi desenvolvido utilizando **Python 3.12**, sendo recomendada a utilização dessa versão para garantir compatibilidade. Será necessário obter uma cópia local do código-fonte, que pode ser obtida com o seguinte comando:
+O sistema foi desenvolvido utilizando **Python 3.12**, sendo recomendada a utilização dessa versão para garantir compatibilidade.
+
+#### 1️⃣ Clonar o Repositório
+
+Será necessário adquirir uma cópia local do código-fonte, que pode ser obtida com o seguinte comando:
 
 ```bash
 git clone https://github.com/davidsantana06/twin-trainer
 ```
+
+#### 2️⃣ Instalar as Dependências
 
 No diretório da aplicação, instale as dependências utilizando o `pip`:
 
@@ -37,6 +43,8 @@ Além disso, será necessário instalar o pacote `en_core_web_sm`. O comando pod
   ```bash
   python -m spacy download en_core_web_sm
   ```
+
+#### 3️⃣ Executar
 
 Após concluir as etapas anteriores, você poderá inicializar os servidores com o seguinte comando:
 
