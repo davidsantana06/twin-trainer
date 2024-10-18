@@ -1,6 +1,30 @@
 [
   {
     "statements": [
+      "quais são os agrupamentos musculares?",
+      "quais são os grupos musculares do corpo?",
+      "quais músculos devo trabalhar no treino?",
+      "quais músculos devo dividir no treino?"
+    ],
+    "answer": "Os principais agrupamentos musculares são: Peitoral, Dorsais (Costas), Deltoides (Ombros), Trapézio, Tríceps, Bíceps, Antebraços, Coxas, Glúteos e Panturrilhas. Estruturar seu treino com foco nessas áreas irá garantir um desenvolvimento muscular equilibrado e funcional."
+  },  
+  {
+    "statements": [
+      "quais são os principais exercícios de musculação?",
+      "quais são os exercícios mais importantes na musculação?",
+      "quais exercícios devo incluir em meu treino de musculação?",
+      "quais são os exercícios fundamentais para o treino de força?",
+      "quais são os exercícios essenciais na musculação?",
+      "quais exercícios são recomendados para iniciantes na musculação?",
+      "que exercícios devo fazer para desenvolver músculos?",
+      "quais são os exercícios-chave em um programa de musculação?",
+      "quais exercícios são ideais para ganhar massa muscular?",
+      "quais são os exercícios mais eficazes na musculação?"
+    ],
+    "answer": "Os principais exercícios de musculação incluem Agachamento, Supino, Levantamento Terra, Barra Fixa, Rosca Direta, Desenvolvimento com Halteres, entre outros."
+  },
+  {
+    "statements": [
       "quais exercícios devo fazer para o peitoral?",
       "me indique exercícios para o peitoral",
       "exercícios eficazes para o peitoral",
@@ -98,5 +122,47 @@
       "melhores exercícios para as panturrilhas"
     ],
     "answer": "Para trabalhar as panturrilhas, você pode realizar exercícios como Gêmeos em Pé, Gêmeos Sentado, Máquina Flexora de Panturrilhas, Donkey Calf Raise e Calf Press na Máquina."
+  },
+  {
+    "statements": [
+      "qual é o melhor horário para treinar?",
+      "em qual horário eu devo treinar?",
+      "existe um horário ideal para treinar?",
+      "quando é o momento mais adequado para treinar?",
+      "em que horário devo fazer meu treino?",
+      "há algum horário específico para treinar?",
+      "qual é o momento mais eficaz para treinar?",
+      "quando devo realizar meu treinamento?",
+      "existe uma hora melhor para o treino?",
+      "em que período do dia é mais vantajoso treinar?"
+    ],
+    "answer": "Quando se trata do melhor horário para treinar, não há uma regra geral. O que importa é o que funciona melhor para você. O ideal é escolher o momento em que você se sinta mais disposto e tenha mais tempo disponível."
+  },
+  {
+    "statements": [
+      "quais as trocas emergenciais de exercícios?",
+      "trocas emergenciais de peitoral",
+      "trocas emergenciais de dorsais",
+      "trocas emergenciais de deltoides",
+      "trocas emergenciais de trapézio",
+      "trocas emergenciais de tríceps/braquial",
+      "trocas emergenciais de bíceps",
+      "trocas emergenciais de antebraço",
+      "trocas emergenciais de coxas",
+      "trocas emergenciais de glúteos",
+      "trocas emergenciais de panturrilha"
+    ],
+    "answer": "As trocas emergenciais de exercícios para todos os grupos musculares estão disponíveis no documento completo, acessível pelo link: [Trocas Emergenciais](https://www.leandrotwin.com.br/assessoria/trocas-emergenciais.pdf)."
+  },
+  {
+    "statements": [
+      "fiquei doente, o que fazer?",
+      "como devo agir quando estou doente?",
+      "quais são as medidas a serem tomadas quando estou doente?",
+      "como devo lidar com uma doença?",
+      "o que são as melhores práticas ao estar doente?",
+      "o que é recomendado fazer quando estou doente?"
+    ],
+    "answer": "Se você estiver doente, é melhor não treinar. O corpo precisa de energia para se recuperar e, se você treinar, estará desviando essa energia para o treino. Além disso, você pode transmitir a doença para outras pessoas. Portanto, é melhor ficar em casa e descansar até que esteja totalmente recuperado."
   }
 ]
