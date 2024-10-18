@@ -1,6 +1,6 @@
 from flask import Blueprint
 from http import HTTPStatus
-from werkzeug.exceptions import HTTPException, InternalServerError
+from werkzeug.exceptions import HTTPException
 
 
 error = Blueprint('error', __name__)
@@ -10,7 +10,7 @@ error = Blueprint('error', __name__)
 
 def _get_code(e: Exception) -> int:
     is_http_exception = isinstance(e, HTTPException)
-    return e.code if is_http_exception else InternalServerError.code
+    return e.code if is_http_exception else 500
 
 
 def _get_description(code: int) -> str:

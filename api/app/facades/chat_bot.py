@@ -36,7 +36,7 @@ class ChatBotFacade:
         input: Statement,
         candidate: Statement
     ) -> float:
-        confidence = 0.0
+        confidence = 0
         if input.text and candidate.text:
             confidence = SequenceMatcher(
                 a=input.text,
