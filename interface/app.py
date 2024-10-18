@@ -1,4 +1,5 @@
 from typing import Dict, Iterator, Literal
+from requests import HTTPError
 import streamlit as st
 import requests
 import time
@@ -55,7 +56,7 @@ def _get_answer(statement: str) -> str:
     try:
         data = _fetch(url)
         answer = data.get('answer')
-    except:
+    except HTTPError:
         answer = 'Bip bop! ' \
             + 'Estou passando por um "esgotamento" temporário ' \
             + 'e, infelizmente, não consigo responder agora. ' \
@@ -72,7 +73,7 @@ def configure_page() -> None:
     )
 
 
-# header _
+# body _
 
 def display_learn_more() -> None:
     with st.expander('💡 Saiba mais...'):
@@ -85,19 +86,20 @@ def display_learn_more() -> None:
             limitado, focado em fornecer respostas precisas a 
             consultas específicas.
 
-            🤔 Não sabe o que fazer? Experimente enviar:
+            🤔 Não sabe como começar? Experimente perguntar:
 
-            - Quais são os principais exercícios de musculação?
-            - Qual é o melhor horário para treinar?
             - O que devo comer para ganhar músculos?
-            - Quais suplementos são mais indicados para ganhar 
-            músculos?
-            - Quais exercícios devo fazer para o trapézio?
-            - Qual exercício devo fazer no lugar de peck deck?
+            - Como perder gordura e ganhar definição?
+            - Quais suplementos devo tomar para aumentar minha 
+            massa muscular?
+            - Quais são os grupos musculares do corpo?
+            - Quais são os principais exercícios de musculação?
+            - Como desenvolver o peitoral?
+            - Em qual horário eu devo treinar?
+            - Quais as trocas emergenciais de exercícios?
+            - Fiquei doente, o que fazer?
         ''')
 
-
-# middle _
 
 def display_history() -> None:
     for message in st.session_state.messages:
@@ -125,8 +127,6 @@ def _display_answer(content: str) -> None:
         st.write_stream(chars)
 
 
-# bottom _
-
 def display_input() -> None:
     if statement := st.chat_input(
         'Enviar mensagem...',
@@ -143,8 +143,8 @@ def display_input() -> None:
 # execution _
 
 if __name__ == '__main__':
-    initialize_session()
     configure_page()
+    initialize_session()
     display_learn_more()
     display_history()
     display_input()
