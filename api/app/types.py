@@ -1,6 +1,6 @@
-from typing import TypedDict
+from typing import TypedDict, List
 
 
 class Conversation(TypedDict):
-    questions: str
+    statements: List[str]
     answer: str
