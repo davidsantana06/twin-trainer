@@ -75,6 +75,17 @@ def configure_page() -> None:
 
 # body _
 
+def hide_header() -> None:
+    st.markdown(
+        '''
+        <style>
+            header {visibility: hidden;}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
+
+
 def display_learn_more() -> None:
     with st.expander('💡 Saiba mais...'):
         st.markdown('''
@@ -145,6 +156,7 @@ def display_input() -> None:
 if __name__ == '__main__':
     configure_page()
     initialize_session()
+    hide_header()
     display_learn_more()
     display_history()
     display_input()
