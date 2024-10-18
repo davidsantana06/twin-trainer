@@ -1,4 +1,5 @@
 from subprocess import Popen, run
+import sys
 
 
 def run_api() -> None:
@@ -10,5 +11,8 @@ def run_interface() -> None:
 
 
 if __name__ == '__main__':
-    run_api()
-    run_interface()
+    try:
+        run_api()
+        run_interface()
+    except KeyboardInterrupt:
+        sys.exit(0)
