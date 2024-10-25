@@ -1,18 +1,17 @@
 from typing import Dict, Iterator, Literal
-from requests import HTTPError
 import streamlit as st
 import requests
 import time
 
 
-# constant _
-
-_API_HOST = 'http://localhost:5000'
-
-
 # type _
 
 _Role = Literal['assistant', 'user']
+
+
+# constant _
+
+_API_HOST = 'http://localhost:5000'
 
 
 # misc _
@@ -56,11 +55,10 @@ def _get_answer(statement: str) -> str:
     try:
         data = _fetch(url)
         answer = data.get('answer')
-    except HTTPError:
+    except:
         answer = 'Bip bop! ' \
             + 'Estou passando por um "esgotamento" temporário ' \
-            + 'e, infelizmente, não consigo responder agora. ' \
-            + 'Você pode tentar novamente mais tarde!'
+            + 'e, infelizmente, não consigo responder agora.'
     return answer
 
 
