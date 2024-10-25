@@ -1,17 +1,17 @@
 from dotenv import load_dotenv
 from flask import Flask
 
-from . import parameters, paths
+from . import parameter, path
 
 
 def _apply_parameters(app: Flask) -> None:
-    for key in dir(parameters):
+    for key in dir(parameter):
         is_parametter = key.isupper()
         if is_parametter:
-            value = getattr(parameters, key)
+            value = getattr(parameter, key)
             app.config[key] = value
 
 
-def configure_enviroment(app: Flask) -> None:
-    load_dotenv(paths.ENV_FILE)
+def setup_enviroment(app: Flask) -> None:
+    load_dotenv(path.ENV_FILE)
     _apply_parameters(app)

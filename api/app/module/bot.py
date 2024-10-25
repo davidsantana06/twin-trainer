@@ -3,9 +3,9 @@ from pathlib import Path
 from typing import List
 import json
 
-from app.config import paths
-from app.facades import chat_bot
-from app.types import Conversation
+from app.config import path
+from app.facade import chat_bot_facade
+from app.typing import Conversation
 
 
 bot = Blueprint('bot', __name__, url_prefix='/bot')
@@ -13,24 +13,24 @@ bot = Blueprint('bot', __name__, url_prefix='/bot')
 
 # service _
 
-def _get_conversations(path: Path) -> List[Conversation]:
-    with open(path, 'r') as file:
+def _get_conversations(file_path: Path) -> List[Conversation]:
+    with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 
 @bot.before_app_first_request
 def learn_conversations() -> None:
-    for path in paths.CONVERSATIONS_DIR.glob('*.json'):
-        conversations = _get_conversations(path)
+    for file_path in path.CONVERSATIONS_DIR.glob('*.json'):
+        conversations = _get_conversations(file_path)
         for conversation in conversations:
             statements = conversation['statements']
             answer = conversation['answer']
             for statement in statements:
-                chat_bot.learn(statement, answer)
+                chat_bot_facade.learn(statement, answer)
 
 
 def _get_answer(statement: str) -> str:
-    return chat_bot.answer(statement)
+    return chat_bot_facade.answer(statement)
 
 
 # controller _
