@@ -9,8 +9,11 @@ Assistente virtual centrado no universo fitness, desenvolvido para responder a u
 ![ChatterBot](https://img.shields.io/badge/legacy-CHATTERBOT-300a24?style=for-the-badge)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
-### 🛠️ Instalação e Configuração
+O guia de uso está disponível em [**📚 Documentação**](./docs.md).
+
+### 🛠️ Instalação
 
 O sistema foi desenvolvido utilizando **Python 3.12**, sendo recomendada a utilização dessa versão para garantir compatibilidade.
 
@@ -30,7 +33,7 @@ No diretório da aplicação, instale as dependências utilizando o `pip`:
 pip install -r requirements.txt
 ```
 
-Além disso, será necessário instalar o pacote `en_core_web_sm`. O comando pode variar conforme o sistema operacional.
+Além disso, pode ser necessário instalar o pacote `en_core_web_sm`. O comando varia conforme o sistema operacional.
 
 - Para sistemas 🐧 **Linux**:
 
