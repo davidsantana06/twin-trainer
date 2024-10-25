@@ -29,6 +29,10 @@ def learn_conversations() -> None:
                 chat_bot_facade.learn(statement, answer)
 
 
+def _normalize_statement(content: str) -> str:
+    return content.lower().rstrip()
+
+
 def _get_answer(statement: str) -> str:
     return chat_bot_facade.answer(statement)
 
@@ -37,6 +41,7 @@ def _get_answer(statement: str) -> str:
 
 @bot.get('/<string:statement>')
 def get_answer(statement: str):
+    statement = _normalize_statement(statement)
     return {
         'statement': statement,
         'answer': _get_answer(statement),
