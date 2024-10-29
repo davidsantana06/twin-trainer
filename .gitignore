@@ -1,6 +1,5 @@
 .venv/
 __pycache__/
-api/.env
 api/storage/*.sqlite3
 api/storage/*.sqlite3-shm
 api/storage/*.sqlite3-wal
