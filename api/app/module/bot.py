@@ -14,7 +14,7 @@ bot = Blueprint('bot', __name__, url_prefix='/bot')
 # service _
 
 def _get_conversations(file_path: Path) -> List[Conversation]:
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, encoding='utf-8') as file:
         return json.load(file)
 
 
