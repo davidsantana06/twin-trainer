@@ -6,13 +6,11 @@ Esta documentação fornece uma visão geral do funcionamento da aplicação, in
 
 Abriga o chatbot, juntamente com os arquivos brutos contendo as conversas. O acesso é realizado através do endereço `localhost:5000`, sendo restrito à interface, o que significa que não é possível acessá-la diretamente. A primeira requisição tende a ser mais demorada, pois inicia o treinamento do bot.
 
-##### `GET` `/bot/<string:statement>`
-
-![CREATE](https://img.shields.io/badge/CREATE-4CAF50?style=flat-square)
+##### <img src="https://img.shields.io/badge/GET-61AFFE?style=flat-square" alt="GET" height="24px"> <img src="https://img.shields.io/badge//bot/%3Cstring:statement%3E-EBF3FB?style=flat-square" alt="/bot/<string:statement>" height="24px">
 
 Responde à declaração informada como **`statement`**.
 
-- **📤 Saída**: _JSON contendo a declaração normalizada e a resposta_.
+- **📤 Saída**: _JSON contendo a declaração normalizada e a resposta_
 
   ```json
   {
